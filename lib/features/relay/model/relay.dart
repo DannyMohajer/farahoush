@@ -83,21 +83,3 @@ class TimerType {
 
   TimerType(this.timerValue);
 }
-
-extension RelayStateExtension on RelayModel {
-  static final Map<String, Map<int, bool>> _relayStates = {};
-
-  bool getRelayState(int relayNumber) {
-    if (!_relayStates.containsKey(id)) {
-      _relayStates[id] = {};
-    }
-    return _relayStates[id]?[relayNumber] ?? false;
-  }
-
-  void setRelayState(int relayNumber, bool state) {
-    if (!_relayStates.containsKey(id)) {
-      _relayStates[id] = {};
-    }
-    _relayStates[id]?[relayNumber] = state;
-  }
-}
